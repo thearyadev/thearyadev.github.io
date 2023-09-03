@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* * {
+    outline: 1px solid red;
+  } */
+:root {
+    --text: #090a0c;
+    --background: #f3f5f6;
+    --primary: #494965;
+    --secondary: #d6d0dd;
+    --accent: #705e82;
+}
+
+body {
+    background-color: var(--background) !important;
+    color: var(--text) !important;
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Text Color Utility */
+.text-color {
+    color: var(--text);
+}
+
+/* Background Color Utility */
+.background-color {
+    background-color: var(--background);
+}
+
+/* Primary Color Utility */
+.primary-color {
+    color: var(--primary);
+}
+
+/* Secondary Color Utility */
+.secondary-color {
+    color: var(--secondary);
+}
+
+/* Accent Color Utility */
+.accent-color {
+    color: var(--accent);
+}
+
+/* Primary Background Color Utility */
+.primary-bg-color {
+    background-color: var(--primary);
+}
+
+/* Secondary Background Color Utility */
+.secondary-bg-color {
+    background-color: var(--secondary);
+}
+
+/* Accent Background Color Utility */
+.accent-bg-color {
+    background-color: var(--accent);
+}
+
+.unset-a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.clickable{
+    padding-left: 10px;
+    padding-right: 10px;
+
+    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+
+}
+
+.clickable:hover {
+    
+    background-color: var(--accent);
+    color: var(--background);
+}
+
+.top-bar-title{
+    transition: all 0.3s ease-in-out;
+}
+
+.top-bar-title:hover{
+    letter-spacing: 0.02em;
+    color: var(--primary)
+}
+
+.unset-btn{
+    all: unset;
+}
+
+.menu-icon{
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.menu-box-h1:hover .menu-icon{
+    opacity: 1;
+}
