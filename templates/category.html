@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class="container pt-3">
+    {% for post in category.posts %}
+    <div class="clickable menu-box-h1">
+        <a href="{{category.name}}/{{post.id}}" class="unset-a">
+            <h5>
+                {{ post.title }} - {{ post.date }}
+                <i class="fa-solid fa-arrow-right menu-icon"></i>
+            </h5>
+
+            <p class="lead">{{post.description}}</p>
+            
+        </a>
+    </div>
+
+    {% endfor %}
+</div>
+
+
+
+
+
+{% endblock %}
