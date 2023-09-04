@@ -1,0 +1,16 @@
+tests
+.tox
+.pytest_cache
+.github
+.git
+__pycache__
+LICENSE
+README.md
+requirements-dev.txt
+tox.ini
+.pre-commit-config.yaml
+.gitignore
+.mypy_cache
+Dockerfile
+docker-compose.yml
+
