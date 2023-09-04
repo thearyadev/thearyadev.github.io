@@ -1,0 +1,7 @@
+version: '3.9'
+services:
+  aryankothari.dev:
+    image: ghcr.io/thearyadev/aryankothari.dev:latest
+    ports:
+      - 8081:8081
+    restart: always
