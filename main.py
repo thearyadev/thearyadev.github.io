@@ -3,10 +3,9 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable
 
-import frontmatter
-import markdown2
+import frontmatter  # type: ignore
+import markdown2  # type: ignore
 from jinja2 import Environment, FileSystemLoader
-from rich import print
 from robyn import Request, Response, Robyn
 
 
@@ -26,7 +25,7 @@ class Category:
 
 def get_content() -> list[Category]:
     content_root = Path("pages").resolve()
-    content = []
+    content: list[Category] = []
 
     for category in content_root.iterdir():
         if category.is_dir():
@@ -81,7 +80,7 @@ class Server(Robyn):
         for category in self.content:
             if category.name == request.path_params.get("category"):
                 for post in category.posts:
-                    if post.id == int(request.path_params.get("post_id")):
+                    if post.id == int(request.path_params.get("post_id") or -1):
                         return Response(
                             status_code=200,
                             headers={"Content-Type": "text/html"},
