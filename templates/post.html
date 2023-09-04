@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<style>
+    .post {
+
+        >h1:not(.post-title) {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+
+
+<div class="container pt-3 post">
+    <h1 class="display-6 post-title">{{post.title}}</h1>
+    {{post.content}}
+</div>
+
+
+{% endblock %}
