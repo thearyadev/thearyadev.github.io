@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Callable
 
 import frontmatter  # type: ignore
-import markdown2  # type: ignore
+import mistune
 from jinja2 import Environment, FileSystemLoader
 from robyn import Request, Response, Robyn
 
@@ -14,6 +14,7 @@ class Post:
     id: int
     title: str
     date: str
+    description: str
     content: str
 
 
@@ -39,7 +40,8 @@ def get_content() -> list[Category]:
                                 title=post_content["title"],
                                 date=post_content["date"],
                                 id=post_content["id"],
-                                content=markdown2.markdown(post_content.content),
+                                description=post_content["description"],
+                                content=mistune.html(post_content.content),
                             )
                         )
             content.append(Category(name=category.name, posts=posts))
@@ -48,22 +50,16 @@ def get_content() -> list[Category]:
 
 
 class Server(Robyn):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(__file__)
         self.get("/")(self.index)
         self.get("/:category/:post_id")(self.content_handler)
+        self.get("/:category")(self.category_handler)
+
         self.add_directory("/static", "public")
         self.content: list[Category] = get_content()
         self.env = Environment(loader=FileSystemLoader("templates"))
         print(self.content)
-
-    async def static(self, request: Request) -> Response:
-        print(request)
-        return Response(
-            status_code=200,
-            headers={"Content-Type": "text/css"},
-            body=open(f"static/{request.path_params.get('file')}", "r").read(),
-        )
 
     async def index(self, _: Request) -> Response:
         template = self.env.get_template("index.html")
@@ -73,10 +69,26 @@ class Server(Robyn):
             body=template.render(content=self.content, page_content=self.content),
         )
 
+    async def category_handler(self, request: Request) -> Response:
+        for category in self.content:
+            if category.name == request.path_params.get("category"):
+                template = self.env.get_template("category.html")
+                return Response(
+                    status_code=200,
+                    headers={"Content-Type": "text/html"},
+                    body=template.render(content=self.content, category=category),
+                )
+        return Response(
+            status_code=200,
+            headers={"Content-Type": "text/html"},
+            body="erm",
+        )
+
     async def content_handler(self, request: Request) -> Response:
         # honestly.
         # idk why i did this
         # but im not changing it
+        template = self.env.get_template("post.html")
         for category in self.content:
             if category.name == request.path_params.get("category"):
                 for post in category.posts:
@@ -84,7 +96,7 @@ class Server(Robyn):
                         return Response(
                             status_code=200,
                             headers={"Content-Type": "text/html"},
-                            body=post.content,
+                            body=template.render(content=self.content, post=post),
                         )
         return Response(
             status_code=200,
