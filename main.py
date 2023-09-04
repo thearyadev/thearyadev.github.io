@@ -59,7 +59,6 @@ class Server(Robyn):
         self.add_directory("/static", "public")
         self.content: list[Category] = get_content()
         self.env = Environment(loader=FileSystemLoader("templates"))
-        print(self.content)
 
     async def index(self, _: Request) -> Response:
         template = self.env.get_template("index.html")
@@ -106,4 +105,4 @@ class Server(Robyn):
 
 
 if __name__ == "__main__":
-    raise SystemExit(Server().start(port=8081) or 0)
+    raise SystemExit(Server().start(port=8081, url="0.0.0.0") or 0)
