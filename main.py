@@ -45,12 +45,14 @@ def get_content() -> list[Category]:
                                 content=mistune.html(post_content.content),
                             )
                         )
-            content.append(Category(name=category.name, posts=posts))
-
-    for category in content:
-        category.posts.sort(
-            key=lambda x: datetime.strptime(x.date, "%Y-%m-%d"), reverse=True
-        )
+            content.append(
+                Category(
+                    name=category.name,
+                    posts=sorted(
+                        posts, key=lambda x: datetime.strptime(x.date, "%Y-%m-%d")
+                    ),
+                )
+            )
 
     return content
 
