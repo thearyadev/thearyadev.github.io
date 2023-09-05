@@ -6,16 +6,35 @@
 <div class="container pt-3">
     <div class="row flex-column flex-sm-row align-items-start">
         <div class="col-sm-8">
-            <p id="index-content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex
-                ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit
-                anim id est laborum.
-            </p>
+            <div>
+                <p class="index-content">Hello, I'm Aryan, a Software Developer.</p>
+                <p class="index-content">From my earliest encounters with code, I knew I was destined to be a
+                    developer. Over the years, I've
+                    gathered many skills in Python, React, NextJS, Go, and more. But it's not just about languages and
+                    frameworks; it's about the art of crafting elegant solutions to complex problems.</p>
+
+                <p class="index-content">Crafting Digital Worlds:</p>
+
+                <p class="index-content">My expertise extends beyond lines of code. I excel in server deployment,
+                    orchestration, and database
+                    management, ensuring that the infrastructure supporting your applications is as solid as the code
+                    itself. I've worked with relational databases like MySQL and PostgreSQL and navigated the uncharted
+                    waters
+                    of
+                    NoSQL databases like MongoDB.
+                </p>
+
+                <p class="index-content">The most interesting thing I've worked with so far are neural networks.
+                    Exploring the potential of artificial intelligence in the form of neural networks, and creating
+                    applications specifically tailored around utilization of those models is facinating.</p>
+
+                <p class="index-content">Let's Connect:</p>
+
+                <p class="index-content">This portfolio/blog is a glimpse into my world and the projects I've had the
+                    privilege to work on. If you're
+                    interested in collaborating, sharing ideas, or just want to chat tech, feel free to reach out. Let's
+                    connect and explore the possibilities together! </p>
+            </div>
         </div>
         <div class="col-sm-4">
             {% include "fragments/category/list.html" %}
@@ -24,18 +43,20 @@
 </div>
 
 <script>
-    const indexContent = document.getElementById("index-content");
-    const words = indexContent.innerText.split(" ");
-    indexContent.innerText = "";
+    const indexContentElements = document.getElementsByClassName("index-content");
+    Array.from(indexContentElements).forEach(indexContent => {
+        const words = indexContent.innerText.split(" ");
+        indexContent.innerText = "";
 
-    words.forEach(word => {
-        const span = document.createElement("span");
-        span.textContent = word + " ";
-        span.classList.add("clickable");
-        span.style.margin = "0";
-        span.style.padding = "0";
-        indexContent.appendChild(span);
-    })
+        words.forEach(word => {
+            const span = document.createElement("span");
+            span.textContent = word + " ";
+            span.classList.add("clickable");
+            span.style.margin = "0";
+            span.style.padding = "0";
+            indexContent.appendChild(span);
+        })
+    });
 </script>
 
 

@@ -1,5 +1,6 @@
 import os
 from dataclasses import dataclass
+from datetime import datetime
 from pathlib import Path
 from typing import Callable
 
@@ -45,6 +46,11 @@ def get_content() -> list[Category]:
                             )
                         )
             content.append(Category(name=category.name, posts=posts))
+
+    for category in content:
+        category.posts.sort(
+            key=lambda x: datetime.strptime(x.date, "%Y-%m-%d"), reverse=True
+        )
 
     return content
 
