@@ -1,5 +1,6 @@
 import os
 from dataclasses import dataclass
+from datetime import datetime
 from pathlib import Path
 from typing import Callable
 
@@ -44,7 +45,14 @@ def get_content() -> list[Category]:
                                 content=mistune.html(post_content.content),
                             )
                         )
-            content.append(Category(name=category.name, posts=posts))
+            content.append(
+                Category(
+                    name=category.name,
+                    posts=sorted(
+                        posts, key=lambda x: datetime.strptime(x.date, "%Y-%m-%d")
+                    ),
+                )
+            )
 
     return content
 
