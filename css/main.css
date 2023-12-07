@@ -108,3 +108,25 @@ body {
         list-style: none;
         font-weight: 200 !important;
 }
+
+
+#post_content img {
+
+            max-width: 100%;
+
+}
+
+#post_content{
+
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 950px){
+    #post_content{
+
+        width: 100%;
+    }
+
+}

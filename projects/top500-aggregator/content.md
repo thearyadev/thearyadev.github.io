@@ -1,12 +1,8 @@
----
-title: Top 500 Aggregator
-date: 2023-9-4
-description: A data aggregation tool for the Overwatch 2 Top 500 Leaderboards
-id: 1
----
+# Top 500 Aggregator
+
 [Top 500 aggregator](https://t500-aggregator.aryankothari.dev) is a set of tools and website I created to evaluate raw data available in the game. This project utilizes a neural network to extract hero data from the top 500 leaderboards. 
 
-![OW2 Leaderboard](/static/images/overwatch-2-leaderboard.png)
+![OW2 Leaderboard](./overwatch-2-leaderboard.png)
 
 The image above is a screenshot of a page in the in-game leaderboard. The area with the little pictures, on the right side of the image, are heroes. Each player, while playing the game, accumulates a "time played" for each hero. The top 500 leaderboard shows the top 3 heroes by playtime for each player on the leaderboard. This is the data being extracted. 
 
@@ -37,7 +33,7 @@ In my opinion, the most important part of this project was conveying the data in
 
 In this project, I used Google Charts for chart generation and used my limited skills in CSS to organize them in a way that followed a flow for the user. From the feedback I've received, the choices I made during the development of the front end were successful but did require some fine-tuning over time. 
 
-![T500 Aggregator Sample Image](/static/images/t500-aggregator.png)
+![T500 Aggregator Sample Image](./t500-aggregator.png)
 
 ### Data management
 
