@@ -1,9 +1,25 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
+    <title>aryankothari.dev</title>
 
-<div class="container pt-3">
+</head>
+
+<body class="p-4">
+    <header class="">
+        <h1 class="text-color top-bar-title" style="letter-spacing: -0.25rem;"><a href="/" class="unset-a">aryan kothari</a></h1>
+
+        <hr class="">
+    </header>
+
+    <div class="container pt-3">
     <div class="row flex-column flex-sm-row align-items-start">
         <div class="col-sm-8">
             <div>
@@ -26,7 +42,7 @@
 
                 <p class="index-content">The most interesting thing I've worked with so far are neural networks.
                     Exploring the potential of artificial intelligence in the form of neural networks, and creating
-                    applications specifically tailored around utilization of those models is facinating.</p>
+                    applications specifically tailored around utilization of those models is fascinating.</p>
 
                 <p class="index-content">Let's Connect:</p>
 
@@ -37,7 +53,38 @@
             </div>
         </div>
         <div class="col-sm-4">
-            {% include "fragments/category/list.html" %}
+
+
+<div class="category-list">
+    <ul>
+        <li class="clickable w-100">
+            <a href="/projects" class="unset-a">
+                <h2 class="display-5 menu-box-h1">
+
+                    projects <i class="fa-solid fa-arrow-right menu-icon"></i>
+
+                </h2>
+            </a>
+        </li>
+
+        <li class="clickable w-100">
+    <a href="https://github.com/thearyadev"class="unset-a" target="_blank">
+        <h2 class="display-5 menu-box-h1">
+            github <i class="fa-solid fa-arrow-up-right-from-square menu-icon"></i>
+        </h2>
+    </a>
+</li>
+        <li class="clickable w-100">
+    <a href="https://twitter.com/kothari_arya"class="unset-a" target="_blank">
+        <h2 class="display-5 menu-box-h1">
+            twitter <i class="fa-solid fa-arrow-up-right-from-square menu-icon"></i>
+        </h2>
+    </a>
+</li>
+
+
+    </ul>
+</div>
         </div>
     </div>
 </div>
@@ -61,4 +108,15 @@
 
 
 
-{% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/2a4678a456.js" crossorigin="anonymous"></script>
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>
