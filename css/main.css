@@ -101,3 +101,10 @@ body {
 .menu-box-h1:hover .menu-icon{
     opacity: 1;
 }
+
+.category-list > ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-weight: 200 !important;
+}
