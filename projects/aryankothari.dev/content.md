@@ -1,7 +1,7 @@
 # My personal website: aryankothari.dev
 Creating a website to be an outline of myself has been on my to-do list for a very long time. You may be thinking, something this important should be a higher priority. This is true, and you would be right. 
 
-I'm a backend developer primarily, creating something visually appealing is difficult and wasn't a part of my skillset for a long time. This changed recently, when i began to explore CSS (primarily though [TailwindCSS](https://tailwind.com)) and frontend frameworks (React and NextJS). Working with these tools changed my perspective on frontend web development, and eventually lead me to create this site. 
+I'm a backend developer primarily, creating something visually appealing is difficult and wasn't a part of my skillset for a long time. This changed recently, when i began to explore CSS (primarily though [TailwindCSS](https://tailwindcss.com)) and frontend frameworks (React and NextJS). Working with these tools changed my perspective on frontend web development, and eventually lead me to create this site. 
 
 ## Getting Started
 Moving forward with this project took a lot of sitting back and thinking. What do I want from the website? How extravagant should it be? I ultimately decided on a few criteria: 
